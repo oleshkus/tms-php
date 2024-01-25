@@ -23,4 +23,4 @@ echo $x++ . "<br>";
 
 $num = 5;
 $notnum = "5";
-echo $num+$notnum;
+echo $num+$notnum;end
