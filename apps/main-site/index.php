@@ -109,8 +109,48 @@ $str = "Я люблю PHP";
 $str = str_replace('PHP', 'Python', $str);
 echo $str; // "Я люблю Python"
 echo "<br>";
-if (strpos($str, 'PHP') !== false) {
+if (str_contains($str, 'PHP')) {
     echo 'Строка содержит подстроку "PHP"';
 } else {
     echo 'Строка не содержит подстроку "PHP"';
 }
+
+
+
+
+echo "<br>";
+$customArray = [1,26,71,15,52];
+function countArray($yourArray){
+    $temp = 0;
+    foreach ($yourArray as $key){
+        $temp = $temp + $key;
+    }
+    return $temp;
+}
+echo countArray($customArray);
+
+
+
+echo "<br>";
+$numberlist = [1,22,44,222,4444,55,5555,1];
+
+foreach ($numberlist as $key => $value) {
+    if ($value / 1000 >= 1) {
+        unset($numberlist[$key]);
+    }
+}
+var_dump($numberlist);
+
+echo "<br>";
+//$startdate = "2024-12-31";
+//strpos($startdate,"-",);
+
+function sortWordsInText($text) {
+    $words = explode(' ', $text); // Разбиваем текст на слова
+    sort($words); // Сортируем слова
+    return implode(' ', $words); // Объединяем отсортированные слова обратно в текст
+}
+
+$text = "яблоко апельсин вишня";
+$sortedText = sortWordsInText($text);
+echo $sortedText; // Выведет: апельсин вишня яблоко
