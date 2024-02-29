@@ -1,4 +1,8 @@
 <?php
 //include("practice.php");
 //include("15.php");
-include("15_1.php");
+spl_autoload_register(function ($class_name) {
+    include $class_name . '.php';
+});
+
+
