@@ -1,27 +1,13 @@
 <?php
 
-use App\Database;
-
-require_once "App/Database.php";
-
+require_once ("App/Database.php");
+$pdo = new Database();
 class Index
 {
-    private PDO $pdo;
 
-    public function __construct()
-    {
-        $this->$pdo = Database::Connect();
-    }
-
-    public function initialize(): void
-    {
-        // Используйте $this->pdo для выполнения SQL-запросов
-        // $result = $this->pdo->query("SELECT * FROM news");
-    }
 }
 
 $index = new Index();
-$index->initialize();
 ?>
 <!doctype html>
 <html lang="ru">

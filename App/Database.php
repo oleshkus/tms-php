@@ -1,13 +1,17 @@
 <?php
-
-namespace App;
-use PDO;
-
 class Database
 {
-    static $dsn = 'pgsql:host=localhost;port=5432;dbname=news_portal;user=postgres;password=1234';
-    static function Connect(): PDO
+    public PDO $pdo;
+
+    public function __construct()
     {
-        return new PDO(Database::$dsn);
+        try {
+            $this->pdo = new PDO("pgsql:host=localhost;dbname=news_portal", "postgres", "1234");
+        } catch (PDOException $exception) {
+            die("<pre>{$exception}</pre>");
+        }
+        return $this->pdo;
     }
 }
+
+?>
