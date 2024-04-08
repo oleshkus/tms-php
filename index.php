@@ -1,13 +1,6 @@
 <?php
 
-require_once ("App/Database.php");
-$pdo = new Database();
-class Index
-{
-
-}
-
-$index = new Index();
+//require_once ("App/Controller/Auth.php");
 ?>
 <!doctype html>
 <html lang="ru">
@@ -19,6 +12,8 @@ $index = new Index();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+
+<?php var_dump($_POST); ?>
 <div class="d-flex justify-content-center">
     <div class="container m-4 text-center">
         <nav class="navbar border rounded bg-primary">
@@ -37,7 +32,7 @@ $index = new Index();
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                             </div>
                             <div class="modal-body">
-                                <form id="registration_form" method="post">
+                                <form id="registration_form" action="" method="post">
                                     <div class="mb-3 form-floating">
                                         <input name="regUsername" type="text" class="form-control" id="username_reg_input" placeholder="Ваше имя пользователя" required>
                                         <label for="username_reg_input" class="form-label">Имя пользователя</label>
@@ -82,7 +77,7 @@ $index = new Index();
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">У меня нет аккаунта</button>
-                                <button type="button" class="btn btn-primary">Войти</button>
+                                <button type="submit" form="login_form" class="btn btn-primary">Войти</button>
                             </div>
                         </div>
                     </div>
